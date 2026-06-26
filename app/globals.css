@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-slate-950: #020617;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-slate-400: #94a3b8;
-  --color-slate-300: #cbd5e1;
-  --color-slate-100: #f8fafc;
-  --color-emerald-400: #34d399;
-  --color-emerald-500: #10b981;
+  /* Obsidian Black & Charcoal Canvas */
+  --color-slate-950: #09090b; /* Pure Zinc Black */
+  --color-slate-900: #141416; /* Deep Onyx Card Background */
+  --color-slate-800: #27272a; /* Tactical Border Gray */
+  --color-slate-700: #3f3f46;
+  --color-slate-400: #a1a1aa; /* High-readability muted body text */
+  --color-slate-300: #d4d4d8;
+  --color-slate-100: #ffffff; /* Stark white headers */
+
+  /* Premium Engineering Tactical Orange Accents */
+  --color-emerald-400: #f97316; /* Safety Orange */
+  --color-emerald-300: #fb923c; /* Light Accent Orange */
+  --color-emerald-950: #431407; /* Orange Glow Drop Tint */
 }
 
 :root {
@@ -17,19 +21,20 @@
 }
 
 body {
-  background-color: #020617;
-  color: #f8fafc;
+  background-color: #09090b;
+  color: #ffffff;
+  font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Scrollbar adjustment for premium look */
+/* Custom premium scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #09090b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #27272a;
   border-radius: 3px;
 }
