@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ProjectsPage() {
   const projects = [
     {
@@ -9,47 +11,72 @@ export default function ProjectsPage() {
     },
     {
       title: "Enterprise Application Suite & Support Portal",
-      role: "Full-Stack Developer",
+      role: "Systems Specialist & Developer",
       description: "Designed and launched a custom administrative software suite featuring a secure technician portal, user check-in kiosk interface, and a real-time support queue monitoring board.",
-      impact: "Streamlines internal team communications and centralizes technician workflows into a single interface.",
-      skills: ["Next.js", "Supabase DB", "Tailwind CSS", "REST APIs"]
+      impact: "Streamlines internal team communications and centralizes technician workflows into a single operational interface.",
+      skills: ["Next.js", "Supabase Database", "Kiosk Architecture", "Real-Time Monitoring"]
     },
     {
       title: "Automated Access Review Reconciliation Engine",
       role: "Backend & Automation Engineer",
       description: "Engineered an automated script pipeline that aggregates, filters, and reconciles system privilege logs, dropping manual oversight loops down to instantaneous processing.",
-      impact: "Significantly reduces administrative overhead and eliminates human error during security audit cycles.",
+      impact: "Significantly reduces administrative overhead and eliminates human tracking error during critical security audit cycles.",
       skills: ["SQL Server", "Data Automation", "System Auditing", "Workflow Optimization"]
     }
   ];
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
-      <div>
-        <h2 className="text-3xl font-extrabold tracking-tight text-white uppercase">Production Deployments</h2>
-        <p className="text-slate-400 mt-1 text-sm">A comprehensive review of software systems engineered to solve business problems.</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      
+      {/* Page Title Block */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>
+          Production Deployments
+        </h2>
+        <p style={{ color: '#71717a', fontSize: '14px', margin: 0 }}>
+          A comprehensive review of software systems engineered to solve complex operational problems.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
+      {/* Main Stacked Project List Layout */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         {projects.map((project, index) => (
-          <div key={index} className="tech-card space-y-4">
-            <div className="flex justify-between items-start flex-wrap gap-2">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">{project.role}</span>
-                <h3 className="text-xl font-bold text-white mt-1">{project.title}</h3>
-              </div>
+          <div 
+            key={index} 
+            style={{ padding: '32px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}
+          >
+            {/* Header Area */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#f97316' }}>
+                {project.role}
+              </span>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.01em' }}>
+                {project.title}
+              </h3>
             </div>
 
-            <p className="text-slate-300 text-sm leading-relaxed">{project.description}</p>
+            {/* Description */}
+            <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6, margin: 0 }}>
+              {project.description}
+            </p>
             
-            <div className="p-4 bg-black/60 border border-slate-800 rounded-xl text-xs text-slate-400 leading-relaxed">
-              <strong className="text-slate-200 font-bold uppercase tracking-wider text-[10px] text-emerald-400 block mb-1">Business Impact Profile</strong> 
-              {project.impact}
+            {/* Business Impact Box */}
+            <div style={{ padding: '16px', backgroundColor: '#000000', border: '1px solid #1e1e20', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#f97316' }}>
+                Business Impact Profile
+              </span> 
+              <p style={{ fontSize: '13px', color: '#d4d4d8', margin: 0, lineHeight: 1.5 }}>
+                {project.impact}
+              </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 pt-2">
+            {/* Technology Tags Cluster */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingTop: '8px' }}>
               {project.skills.map((skill, i) => (
-                <span key={i} className="px-2.5 py-1 text-xs font-bold bg-slate-950 text-slate-300 rounded-md border border-slate-800 tracking-wide">
+                <span 
+                  key={i} 
+                  style={{ display: 'inline-block', padding: '4px 12px', fontSize: '12px', fontWeight: 600, backgroundColor: '#141416', color: '#e4e4e7', borderRadius: '6px', border: '1px solid #27272a' }}
+                >
                   {skill}
                 </span>
               ))}
@@ -57,6 +84,7 @@ export default function ProjectsPage() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }

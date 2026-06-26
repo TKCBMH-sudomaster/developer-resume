@@ -21,43 +21,67 @@ export default function SkillsPage() {
     : technicalSkills.filter(s => s.category === activeTab);
 
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
-      <div>
-        <h2 className="text-3xl font-extrabold tracking-tight text-white uppercase">Technical Competency Index</h2>
-        <p className="text-slate-400 mt-1 text-sm">Select a technical tier below to isolate specific environment skill disciplines.</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+      
+      {/* Page Title Block */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>
+          Technical Competency Index
+        </h2>
+        <p style={{ color: '#71717a', fontSize: '14px', margin: 0 }}>
+          Select a technical discipline category below to filter down specialized environment architectures.
+        </p>
       </div>
 
-      {/* Navigation Filter Controls */}
-      <div className="flex flex-wrap gap-2 p-2 bg-slate-900 border border-slate-800 rounded-2xl max-w-max">
-        {['all', 'frontend', 'backend', 'automation', 'cloud'].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold capitalize tracking-wider transition-all cursor-pointer ${
-              activeTab === tab
-                ? 'bg-emerald-400 text-black shadow-md shadow-orange-500/10'
-                : 'text-slate-400 hover:text-white'
-            }`}
-          >
-            {tab === 'all' ? 'View All Competencies' : `${tab}`}
-          </button>
-        ))}
+      {/* Dynamic Tab Controls Layout */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '8px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px', width: 'max-content', maxWidth: '100%', boxSizing: 'border-box' }}>
+        {['all', 'frontend', 'backend', 'automation', 'cloud'].map((tab) => {
+          const isActive = activeTab === tab;
+          return (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              style={{
+                padding: '8px 16px',
+                borderRadius: '8px',
+                fontSize: '12px',
+                fontWeight: 700,
+                textTransform: 'capitalize',
+                border: isActive ? '1px solid #f97316' : '1px solid transparent',
+                backgroundColor: isActive ? '#f97316' : 'transparent',
+                color: isActive ? '#000000' : '#a1a1aa',
+                cursor: 'pointer',
+                transition: 'all 0.2s'
+              }}
+            >
+              {tab === 'all' ? 'All Competencies' : tab}
+            </button>
+          );
+        })}
       </div>
 
-      {/* Structured Competencies Output */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Grid Display Container */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
         {displayedSkills.map((skill, idx) => (
-          <div key={idx} className="p-5 bg-slate-900 border border-slate-800 rounded-2xl space-y-2">
-            <div className="flex justify-between items-center gap-4">
-              <span className="font-extrabold text-white text-sm tracking-wide">{skill.name}</span>
-              <span className="text-[10px] font-black px-2 py-0.5 rounded bg-black text-emerald-400 border border-slate-800 uppercase tracking-widest">
+          <div 
+            key={idx} 
+            style={{ padding: '24px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
+              <span style={{ fontWeight: 700, color: '#ffffff', fontSize: '15px', letterSpacing: '-0.01em' }}>
+                {skill.name}
+              </span>
+              <span style={{ fontSize: '10px', fontWeight: 800, padding: '2px 8px', backgroundColor: '#000000', color: '#f97316', border: '1px solid rgba(249, 115, 22, 0.3)', borderRadius: '4px', textTransform: 'uppercase' }}>
                 {skill.level}
               </span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">{skill.detail}</p>
+            <p style={{ fontSize: '13px', color: '#a1a1aa', lineHeight: 1.5, margin: 0 }}>
+              {skill.detail}
+            </p>
           </div>
         ))}
       </div>
+
     </div>
   );
 }
