@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Obsidian Black & Charcoal Canvas */
-  --color-slate-950: #09090b; /* Pure Zinc Black */
-  --color-slate-900: #141416; /* Deep Onyx Card Background */
-  --color-slate-800: #27272a; /* Tactical Border Gray */
-  --color-slate-700: #3f3f46;
-  --color-slate-400: #a1a1aa; /* High-readability muted body text */
-  --color-slate-300: #d4d4d8;
-  --color-slate-100: #ffffff; /* Stark white headers */
+  /* Tactical Ops Dashboard Color Palette */
+  --color-slate-950: #000000; /* True Void Black */
+  --color-slate-900: #0c0d10; /* Gunmetal Panel */
+  --color-slate-800: #1a1c22; /* Tactical Border Gray */
+  --color-slate-700: #292d35;
+  --color-slate-400: #9499a6; /* Muted Readout Text */
+  --color-slate-100: #ffffff; /* Crisp White Main Readout */
 
-  /* Premium Engineering Tactical Orange Accents */
-  --color-emerald-400: #f97316; /* Safety Orange */
-  --color-emerald-300: #fb923c; /* Light Accent Orange */
-  --color-emerald-950: #431407; /* Orange Glow Drop Tint */
+  /* Standard Tactical Orange Accent & Glow */
+  --color-emerald-400: #f97316; /* Tactical Orange (Base) */
+  --color-emerald-300: #fb923c; /* Bright Orange Glow */
+  --color-emerald-950: #431407; /* Dark Orange CRT Shadow */
 }
 
 :root {
@@ -21,9 +20,10 @@
 }
 
 body {
-  background-color: #09090b;
+  background-color: #000000;
   color: #ffffff;
   font-family: ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Custom premium scrollbar */
@@ -32,9 +32,9 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1a1c22;
   border-radius: 3px;
 }
