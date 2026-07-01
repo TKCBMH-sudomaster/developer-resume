@@ -4,24 +4,24 @@ export default function ProjectsPage() {
   const projects = [
     {
       title: "Full-Stack Meal Planner Application",
-      role: "Independent Personal Project",
-      description: "Engineered an end-to-end nutritional planning utility featuring interactive menu construction, dynamic macro-nutrient calculation trees, and persistent user profile tracking tables.",
-      impact: "Combines fast cloud computing with intuitive data state management to process custom calculations without UI freeze lag.",
-      skills: ["Next.js Framework", "PostgreSQL / Supabase", "State Trees", "REST API Endpoints"]
+      role: "Independent Software Build (Personal Project)",
+      description: "Engineered a responsive, end-to-end nutritional planning utility featuring interactive menu construction, dynamic macro-nutrient calculation trees, and persistent user data structures.",
+      impact: "Combines fast cloud computing with modern UI state management to process custom calculations smoothly without client-side rendering lag.",
+      skills: ["Next.js Framework", "PostgreSQL / Supabase", "State Management", "REST API Development"]
     },
     {
       title: "IT Helpdesk Digital Queue System (Solutions Bar)",
-      role: "Independent Personal Project",
-      description: "Architected a multi-interface support ecosystem featuring a secure technician management portal, a high-traffic user check-in kiosk system, and a real-time queue monitoring dashboard.",
-      impact: "Eliminates operational bottlenecks by unifying live support metrics into a centralized database schema.",
-      skills: ["Supabase DB", "Kiosk Mode UI", "Monitoring Dashboards", "Relational Architecture"]
+      role: "Independent Software Build (Personal Project)",
+      description: "Architected a multi-interface technical support tool modeled after enterprise walk-up environments. Features a secure technician management portal, a high-traffic user check-in kiosk system, and a real-time monitor queue dashboard.",
+      impact: "Simulates an enterprise-grade solution to eliminate operational support bottlenecks by unifying live metrics into a centralized schema.",
+      skills: ["Supabase Relational DB", "Kiosk Mode UI Layouts", "Live Monitoring Dashboards", "Relational Database Design"]
     },
     {
       title: "The Angler Application",
-      role: "Independent Personal Project",
-      description: "Designed and engineered a tracking utility featuring a robust backend engine with manual user provisioning and automated event-driven email verification notifications.",
-      impact: "Successfully maps a clean, tactical theme across a highly versatile interface adapted to multiple user demographics.",
-      skills: ["Notification Pipelines", "User Provisioning", "Theme Adapters", "Event Auditing"]
+      role: "Independent Software Build (Personal Project)",
+      description: "Designed and engineered a tracking utility featuring a secure backend engine with manual user provisioning and automated event-driven email verification pipelines.",
+      impact: "Successfully builds a clean, tactical user interface adapted to modern data tracking requirements.",
+      skills: ["Notification Pipelines", "User Provisioning Flows", "Theme Configuration", "Event Auditing"]
     }
   ];
 
@@ -30,10 +30,10 @@ export default function ProjectsPage() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
         <h2 style={{ fontSize: '24px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>
-          Independent Software Builds
+          Independent Engineering Builds
         </h2>
         <p style={{ color: '#71717a', fontSize: '14px', margin: 0 }}>
-          A comprehensive review of software systems engineered in my personal development environment to solve complex operational problems.
+          A review of software systems engineered in my personal development environment to solve practical infrastructure and data problems.
         </p>
       </div>
 

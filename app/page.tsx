@@ -2,73 +2,101 @@ import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', paddingTop: '12px', paddingBottom: '12px' }}>
       
-      {/* Hero Header Card with Vivid Tactical Orange Accent Styling */}
-      <section style={{ padding: '40px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <div>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', fontSize: '11px', fontWeight: 700, backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#f97316', border: '1px solid rgba(249, 115, 22, 0.3)', borderRadius: '9999px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-            <span style={{ width: '8px', height: '8px', backgroundColor: '#f97316', borderRadius: '50%', display: 'inline-block' }} />
-            STATUS: ACTIVE_AVAILABILITY
-          </div>
-        </div>
-        
-        <h1 style={{ fontSize: '38px', fontWeight: 800, letterSpacing: '-0.025em', color: '#ffffff', margin: 0, lineHeight: 1.15 }}>
-          Systems Optimization & <br />Full-Stack Engineer
+      {/* Hero / Introduction Section */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: '#f97316' }}>
+          Enterprise Systems & Software Engineering
+        </span>
+        <h1 style={{ fontSize: '36px', fontWeight: 800, letterSpacing: '-0.03em', color: '#ffffff', margin: 0, lineHeight: 1.1 }}>
+          Trevor Hunter
         </h1>
-        <p style={{ fontSize: '16px', color: '#a1a1aa', lineHeight: 1.6, maxWidth: '800px', margin: 0 }}>
-          Results-driven technical leader specializing in full-scale web utilities, 
-          scalable database architectures, and infrastructure automation. Focused 
-          on maximizing operational efficiency and eliminating frictional bottlenecks 
-          in complex digital workflows.
+        <p style={{ fontSize: '16px', color: '#a1a1aa', lineHeight: 1.6, margin: 0, maxWidth: '640px' }}>
+          Senior IT Technical Analyst specializing in cloud platform infrastructure, enterprise systems management, and secure network engineering. Blending real-world operations with modern full-stack application development.
         </p>
-      </section>
+      </div>
 
-      {/* Primary Engineering Modules Side-by-Side Grid */}
-      <section style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        <div>
-          <h2 style={{ fontSize: '22px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>Operational Core Modules</h2>
-          <p style={{ color: '#71717a', fontSize: '14px', margin: '4px 0 0 0' }}>Strategic domains of optimization and full-cycle development.</p>
+      <div style={{ height: '1px', backgroundColor: '#27272a' }} />
+
+      {/* Quick Metrics Dashboard */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
+        <div style={{ padding: '20px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>3,000+</div>
+          <div style={{ fontSize: '12px', fontWeight: 600, color: '#71717a', textTransform: 'uppercase', marginTop: '4px' }}>Enterprise Tickets Resolved</div>
         </div>
+        <div style={{ padding: '20px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>4x</div>
+          <div style={{ fontSize: '12px', fontWeight: 600, color: '#71717a', textTransform: 'uppercase', marginTop: '4px' }}>AWS Cloud Quest Certs</div>
+        </div>
+        <div style={{ padding: '20px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>60+</div>
+          <div style={{ fontSize: '12px', fontWeight: 600, color: '#71717a', textTransform: 'uppercase', marginTop: '4px' }}>Telecom Sites Managed</div>
+        </div>
+      </div>
+
+      {/* Core Professional Overview Split */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
         
-        {/* Valid Flexible Responsive Card Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '24px' }}>
-          
-          {/* Module Card 1 */}
-          <div style={{ padding: '28px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#f97316' }}>Core Capability</span>
-            <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.01em' }}>Application & Enterprise Architecture</h3>
-            <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.5, margin: 0 }}>
-              Designing and deploying robust, component-driven administrative portals and secure support interfaces integrated seamlessly with modern cloud solutions and verified API structures.
-            </p>
+        {/* Left Focus: Current Enterprise Footprint */}
+        <div style={{ padding: '24px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
+            Current Focus
+          </h2>
+          <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6, margin: 0 }}>
+            Serving as a <strong>Senior Enterprise Support Technical Analyst at Gallagher</strong>, delivering high-tier infrastructure solutions, hardware lifecycle auditing, and technical execution policies within critical executive environments.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+            {["Microsoft Entra ID", "Zscaler PAA", "Intune MDM", "Windows Server"].map((tech, i) => (
+              <span key={i} style={{ fontSize: '11px', fontWeight: 600, backgroundColor: '#000000', color: '#71717a', padding: '2px 8px', borderRadius: '4px', border: '1px solid #1e1e20' }}>
+                {tech}
+              </span>
+            ))}
           </div>
-          
-          {/* Module Card 2 */}
-          <div style={{ padding: '28px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#f97316' }}>Strategic Focus</span>
-            <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.01em' }}>Business Workflow Automation</h3>
-            <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.5, margin: 0 }}>
-              Engineering efficient programmatic routines to process, reconcile, and synchronize complex database records, replacing manual tracking steps with optimized automated data streams.
-            </p>
+        </div>
+
+        {/* Right Focus: Systems Automation & Dev */}
+        <div style={{ padding: '24px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
+            Engineering & Tools
+          </h2>
+          <p style={{ fontSize: '14px', color: '#a1a1aa', lineHeight: 1.6, margin: 0 }}>
+            Building performance-tuned, independent software solutions to simulate and optimize complex operational pipelines, utilizing reactive state trees and relational cloud architectures.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+            {["Next.js / React", "Supabase DB", "Python Scripts", "PowerShell"].map((tech, i) => (
+              <span key={i} style={{ fontSize: '11px', fontWeight: 600, backgroundColor: '#000000', color: '#71717a', padding: '2px 8px', borderRadius: '4px', border: '1px solid #1e1e20' }}>
+                {tech}
+              </span>
+            ))}
           </div>
-
         </div>
-      </section>
 
-      {/* Action Navigation Controls Panel */}
-      <div style={{ padding: '32px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <div>
-          <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', margin: 0 }}>Portfolio Execution Controls</h3>
-          <p style={{ fontSize: '13px', color: '#71717a', margin: '4px 0 0 0' }}>Launch specific interactive portfolio interface modules for deep technical review.</p>
-        </div>
-        
-        {/* Properly Styled Production Interface Navigation Buttons */}
-        <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-          <Link href="/projects" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', backgroundColor: '#f97316', color: '#000000', fontWeight: 700, fontSize: '14px', padding: '14px 28px', borderRadius: '8px' }}>
-            Launch Project Readouts →
+      </div>
+
+      {/* Explicit Navigation Cards Footer */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingTop: '16px' }}>
+        <h3 style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#71717a', margin: 0 }}>
+          Explore Resume Point of Interest
+        </h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
+          <Link href="/projects" style={{ textDecoration: 'none' }}>
+            <div style={{ padding: '16px', backgroundColor: '#000000', border: '1px solid #1e1e20', borderRadius: '8px', color: '#ffffff', fontWeight: 600, fontSize: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }}>
+              <span>View Projects</span>
+              <span style={{ color: '#f97316', marginLeft: 'auto' }}>→</span>
+            </div>
           </Link>
-          <Link href="/skills" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', color: '#d4d4d8', fontWeight: 700, fontSize: '14px', padding: '14px 28px', borderRadius: '8px', border: '1px solid #27272a' }}>
-            Access Competencies Grid →
+          <Link href="/skills" style={{ textDecoration: 'none' }}>
+            <div style={{ padding: '16px', backgroundColor: '#000000', border: '1px solid #1e1e20', borderRadius: '8px', color: '#ffffff', fontWeight: 600, fontSize: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }}>
+              <span>Technical Skills</span>
+              <span style={{ color: '#f97316', marginLeft: 'auto' }}>→</span>
+            </div>
+          </Link>
+          <Link href="/experience" style={{ textDecoration: 'none' }}>
+            <div style={{ padding: '16px', backgroundColor: '#000000', border: '1px solid #1e1e20', borderRadius: '8px', color: '#ffffff', fontWeight: 600, fontSize: '14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }}>
+              <span>Professional History</span>
+              <span style={{ color: '#f97316', marginLeft: 'auto' }}>→</span>
+            </div>
           </Link>
         </div>
       </div>

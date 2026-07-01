@@ -1,82 +1,124 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function SkillsPage() {
-  const [activeTab, setActiveTab] = useState<string>('all');
-
-  const technicalSkills = [
-    { name: "Next.js / React Framework", category: "frontend", level: "Advanced", detail: "Developing high-performance user portals, interactive kiosk modes, and scalable web interfaces." },
-    { name: "Tailwind CSS Layouts", category: "frontend", level: "Advanced", detail: "Creating highly responsive, adaptive layouts across custom presentation themes." },
-    { name: "Supabase Architecture", category: "backend", level: "Advanced", detail: "Integrating production cloud relational systems, live data stream monitoring, and secure user profiles." },
-    { name: "Automated Notification Pipelines", category: "automation", level: "Intermediate", detail: "Building automated event-driven messaging routines and transactional communication scripts." },
-    { name: "User Provisioning & Security", category: "automation", level: "Intermediate", detail: "Configuring systematic manual user controls and administrative credential permissions." },
-    { name: "REST APIs & JSON Handling", category: "backend", level: "Advanced", detail: "Connecting multiple front-facing portals to isolated relational database objects cleanly." },
-    { name: "GitHub Repository Engineering", category: "cloud", level: "Advanced", detail: "Structuring clean version history pipelines, collaborative codebase merges, and branch checking." },
-    { name: "Vercel Cloud Optimization", category: "cloud", level: "Intermediate", detail: "Provisioning zero-downtime production deployments tied directly to source control main lines." }
+  // Available filter categories
+  const categories = [
+    "All",
+    "Front-End / Back-End",
+    "Enterprise Systems",
+    "Infrastructure Management",
+    "Cloud Operations",
+    "IT Support"
   ];
 
-  const displayedSkills = activeTab === 'all'
-    ? technicalSkills
-    : technicalSkills.filter(s => s.category === activeTab);
+  // Track currently selected category
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  // All master skills tagged by their relevant sections
+  const skillsData = [
+    { name: "Next.js Framework & React", tags: ["Front-End / Back-End"] },
+    { name: "PostgreSQL / Supabase Relational DB", tags: ["Front-End / Back-End"] },
+    { name: "Scripting: Python, PowerShell, Basic C#", tags: ["Front-End / Back-End", "Cloud Operations"] },
+    { name: "Git & GitHub Lifecycle Management", tags: ["Front-End / Back-End"] },
+    
+    { name: "Azure / Active Directory / Microsoft Entra ID", tags: ["Enterprise Systems", "Cloud Operations"] },
+    { name: "Microsoft Intune (Mobile Device Management)", tags: ["Enterprise Systems", "Infrastructure Management"] },
+    { name: "Ivanti and BMC Helix Ticketing & Asset Management Systems", tags: ["Enterprise Systems", "IT Support"] },
+    { name: "Microsoft 365 Enterprise Application Suites", tags: ["Enterprise Systems", "IT Support"] },
+    
+    { name: "AWS & Windows Server Administration", tags: ["Infrastructure Management", "Cloud Operations"] },
+    { name: "Modems, Routers, Switches, Cables", tags: ["Infrastructure Management"] },
+    { name: "Cisco Routers, Switches, & Packet Tracer", tags: ["Infrastructure Management"] },
+    { name: "Fiber Optic & Coaxial Cable Telecommunications", tags: ["Infrastructure Management"] },
+    { name: "Baseband & Power Distribution Units (PDUs)", tags: ["Infrastructure Management"] },
+    
+    { name: "AWS Cloud Quest: Solutions Architect Certification", tags: ["Cloud Operations"] },
+    { name: "AWS Cloud Quest: Security Certification", tags: ["Cloud Operations"] },
+    { name: "AWS Cloud Quest: Networking Certification", tags: ["Cloud Operations"] },
+    { name: "AWS Cloud Quest: Cloud Practitioner Certification", tags: ["Cloud Operations"] },
+    { name: "Virtualization (AWS & Citrix)", tags: ["Cloud Operations", "Infrastructure Management"] },
+    { name: "Zscaler / Ivanti / FortiClient VPN & Forti Token Authenticators", tags: ["Cloud Operations", "Infrastructure Management"] },
+    
+    { name: "Executive/ VIP End User Support", tags: ["IT Support"] },
+    { name: "Software & Hardware Troubleshooting", tags: ["IT Support"] },
+    { name: "Computer Systems Troubleshooting", tags: ["IT Support"] },
+    { name: "HP, Brother, Ricoh, Xerox Printer/Scanner Troubleshooting", tags: ["IT Support"] },
+    { name: "Remote Desktop Software (LogMeIn, Microsoft Remote Desktop, Putty)", tags: ["IT Support", "Infrastructure Management"] },
+    { name: "IT Security Foundations / CSI Event Logs", tags: ["IT Support", "Cloud Operations"] },
+    { name: "Assisting in Project Management", tags: ["IT Support"] }
+  ];
+
+  // Filter skills based on chosen tab
+  const filteredSkills = activeCategory === "All"
+    ? skillsData
+    : skillsData.filter(skill => skill.tags.includes(activeCategory));
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       
+      {/* Page Header */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
         <h2 style={{ fontSize: '24px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>
-          Technical Competency Index
+          Technical Skills
         </h2>
         <p style={{ color: '#71717a', fontSize: '14px', margin: 0 }}>
-          Select a technical discipline category below to filter down specialized environment architectures.
+          Select a category to filter technical capabilities across core engineering disciplines.
         </p>
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '8px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px', width: 'max-content', maxWidth: '100%', boxSizing: 'border-box' }}>
-        {['all', 'frontend', 'backend', 'automation', 'cloud'].map((tab) => {
-          const isActive = activeTab === tab;
+      {/* Interactive Category Selector Tabs */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', paddingBottom: '8px', borderBottom: '1px solid #27272a' }}>
+        {categories.map((category) => {
+          const isActive = activeCategory === category;
           return (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
+              key={category}
+              onClick={() => setActiveCategory(category)}
               style={{
                 padding: '8px 16px',
-                borderRadius: '8px',
-                fontSize: '12px',
-                fontWeight: 700,
-                textTransform: 'capitalize',
-                border: isActive ? '1px solid #f97316' : '1px solid transparent',
-                backgroundColor: isActive ? '#f97316' : 'transparent',
+                fontSize: '13px',
+                fontWeight: 600,
+                backgroundColor: isActive ? '#f97316' : '#09090b',
                 color: isActive ? '#000000' : '#a1a1aa',
+                border: isActive ? '1px solid #f97316' : '1px solid #27272a',
+                borderRadius: '8px',
                 cursor: 'pointer',
-                transition: 'all 0.2s'
+                transition: 'all 0.15s ease',
+                outline: 'none'
               }}
             >
-              {tab === 'all' ? 'All Competencies' : tab}
+              {category}
             </button>
           );
         })}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
-        {displayedSkills.map((skill, idx) => (
-          <div 
-            key={idx} 
-            style={{ padding: '24px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', display: 'flex', flexDirection: 'column', gap: '12px' }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
-              <span style={{ fontWeight: 700, color: '#ffffff', fontSize: '15px', letterSpacing: '-0.01em' }}>
+      {/* Filtered Tag Grid Container */}
+      <div style={{ padding: '32px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '16px', minHeight: '200px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+          {filteredSkills.map((skill, index) => {
+            const isAwsQuest = skill.name.includes("AWS Cloud Quest");
+            return (
+              <span 
+                key={index} 
+                style={{ 
+                  display: 'inline-block', 
+                  padding: '8px 16px', 
+                  fontSize: '14px', 
+                  fontWeight: 600, 
+                  backgroundColor: isAwsQuest ? '#271c14' : '#000000', 
+                  color: isAwsQuest ? '#f97316' : '#e4e4e7', 
+                  borderRadius: '8px', 
+                  border: isAwsQuest ? '1px solid #f97316' : '1px solid #1e1e20'
+                }}
+              >
                 {skill.name}
               </span>
-              <span style={{ fontSize: '10px', fontWeight: 800, padding: '2px 8px', backgroundColor: '#000000', color: '#f97316', border: '1px solid rgba(249, 115, 22, 0.3)', borderRadius: '4px', textTransform: 'uppercase' }}>
-                {skill.level}
-              </span>
-            </div>
-            <p style={{ fontSize: '13px', color: '#a1a1aa', lineHeight: 1.5, margin: 0 }}>
-              {skill.detail}
-            </p>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
 
     </div>
