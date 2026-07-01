@@ -6,14 +6,14 @@ export default function SkillsPage() {
   const [activeTab, setActiveTab] = useState<string>('all');
 
   const technicalSkills = [
-    { name: "Next.js / React Framework", category: "frontend", level: "Advanced", detail: "Developing high-performance user portals and scalable web interfaces for consumer engines." },
-    { name: "Tailwind CSS Layouts", category: "frontend", level: "Advanced", detail: "Creating highly responsive, mobile-optimized pixel-perfect digital layouts." },
-    { name: "SQL Server / Relational Databases", category: "backend", level: "Intermediate", detail: "Managing database tables, structuring complex queries, and organizing application schemas." },
-    { name: "Supabase Architecture", category: "backend", level: "Intermediate", detail: "Integrating cloud backend databases, fast data streams, and secure user authorization protocols." },
-    { name: "REST APIs & JSON Handling", category: "backend", level: "Advanced", detail: "Connecting frontend interfaces securely to internal microservices and external web platforms." },
-    { name: "System Workflow Automation", category: "automation", level: "Advanced", detail: "Writing precise server routines to systematically parse raw data, replacing manual handling errors." },
-    { name: "GitHub Repository Engineering", category: "cloud", level: "Advanced", detail: "Structuring clean version history pipelines, collaborative codebase merges, and deployment sanity tracking." },
-    { name: "Vercel Cloud Optimization", category: "cloud", level: "Intermediate", detail: "Provisioning zero-downtime production deployment branches and managing secure cloud environment tokens." }
+    { name: "Next.js / React Framework", category: "frontend", level: "Advanced", detail: "Developing high-performance user portals, interactive kiosk modes, and scalable web interfaces." },
+    { name: "Tailwind CSS Layouts", category: "frontend", level: "Advanced", detail: "Creating highly responsive, adaptive layouts across custom presentation themes." },
+    { name: "Supabase Architecture", category: "backend", level: "Advanced", detail: "Integrating production cloud relational systems, live data stream monitoring, and secure user profiles." },
+    { name: "Automated Notification Pipelines", category: "automation", level: "Intermediate", detail: "Building automated event-driven messaging routines and transactional communication scripts." },
+    { name: "User Provisioning & Security", category: "automation", level: "Intermediate", detail: "Configuring systematic manual user controls and administrative credential permissions." },
+    { name: "REST APIs & JSON Handling", category: "backend", level: "Advanced", detail: "Connecting multiple front-facing portals to isolated relational database objects cleanly." },
+    { name: "GitHub Repository Engineering", category: "cloud", level: "Advanced", detail: "Structuring clean version history pipelines, collaborative codebase merges, and branch checking." },
+    { name: "Vercel Cloud Optimization", category: "cloud", level: "Intermediate", detail: "Provisioning zero-downtime production deployments tied directly to source control main lines." }
   ];
 
   const displayedSkills = activeTab === 'all'
@@ -23,7 +23,6 @@ export default function SkillsPage() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       
-      {/* Page Title Block */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
         <h2 style={{ fontSize: '24px', fontWeight: 800, letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase', margin: 0 }}>
           Technical Competency Index
@@ -33,7 +32,6 @@ export default function SkillsPage() {
         </p>
       </div>
 
-      {/* Dynamic Tab Controls Layout */}
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', padding: '8px', backgroundColor: '#09090b', border: '1px solid #27272a', borderRadius: '12px', width: 'max-content', maxWidth: '100%', boxSizing: 'border-box' }}>
         {['all', 'frontend', 'backend', 'automation', 'cloud'].map((tab) => {
           const isActive = activeTab === tab;
@@ -60,7 +58,6 @@ export default function SkillsPage() {
         })}
       </div>
 
-      {/* Grid Display Container */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
         {displayedSkills.map((skill, idx) => (
           <div 
